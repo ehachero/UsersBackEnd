@@ -1,21 +1,10 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from fastapi.middleware.cors import CORSMiddleware
+
 
 app=FastAPI()
 
-origins = [
-    "http://localhost:3000",
-    # Añade otros orígenes si es necesario
-]
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 #creamos una clase user
 class User (BaseModel):
